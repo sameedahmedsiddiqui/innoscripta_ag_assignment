@@ -1,3 +1,5 @@
+import { Bounce, toast } from "react-toastify";
+
 interface FormatArticleDateProps {
     date: Date
 }
@@ -19,6 +21,36 @@ const formatArticleDate = (props: FormatArticleDateProps) => {
     }
 }
 
+const errorPop = (msg: string) => {
+  toast.error(msg, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: false,
+    progress: undefined,
+    theme: "dark",
+    transition: Bounce,
+  })
+}
+
+const successPop = (msg: string) => {
+  toast.success(msg, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: false,
+    progress: undefined,
+    theme: "dark",
+    transition: Bounce,
+  })
+}
+
 export {
-    formatArticleDate
+    formatArticleDate,
+    errorPop,
+    successPop
 }

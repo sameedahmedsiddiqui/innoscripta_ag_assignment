@@ -44,3 +44,30 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Docker Setup
+
+### Create Docker Image
+
+Open a terminal and navigate to your project directory. Run the following command to build the Docker image:
+
+`docker build -t innoscripta-ag-assignment .`
+
+### Run the Docker Container
+
+After building the image, run the container using the following command:
+
+`docker run -p 3000:3000 innoscripta-ag-assignment`
+
+### Verify the Container is Running
+
+To verify that the container is running, list all running containers using:
+
+`docker ps`
+
+### Stop the Docker Container
+
+To stop the running container, use the following command:
+
+`docker stop <CONTAINER_ID>`

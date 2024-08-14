@@ -1,57 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { errorPop } from './app/utils';
+import { NewsArticles } from './app/utils/interfaces';
+import Articles from './app/components/Articles';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import moment from 'moment';
+import { Bars } from 'react-loader-spinner';
+import LoadingOverlay from 'react-loading-overlay';
+import { getNewsApiArticles, getNYTArticles, getTGArticles } from './app/utils/Api/newsApi';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { Link, NavLink, Outlet, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from './app/store/store';
-import { useDispatch } from 'react-redux';
-import { decrement, increment } from './app/store/Slicers/counter';
-import axios from 'axios';
-import { NEWS_API_KEY, NEWS_API_URL } from './constants';
-import { formatArticleDate } from './app/utils';
-import { NewsArticles } from './app/utils/interfaces';
-import ArticleTile from './app/components/ArticleTile';
-import Articles from './app/components/Articles';
-
-// interface NewsArticles {
-//   title: string,
-//   author: string,
-//   description: string,
-//   publishedAt: Date,
-//   urlToImage: string
-// }
+import { Navbar } from './app/components/Navbar';
 
 function App() {
-  const count = useSelector((state: RootState) => state.counter.value)
-  const dispatch = useDispatch()
-  const [articles, setArticles] = useState<NewsArticles[]>([])
-  const [articlesPerPage, setArticlesPerPagee] = useState<number>(20)
-  // const newsApi = new NewsApi('e497c6e3d02e4999967b7d048588561b')
-
-  useEffect(() => {
-    axios.get(`${NEWS_API_URL}v2/everything?q=bitcoin&apiKey=${NEWS_API_KEY}`).then((res) => {
-      console.log('fetch everything', res)
-      if (res?.data?.status === 'ok') {
-        setArticles([...res?.data?.articles])
-        
-      }
-    }).catch(error  => console.log('fetch error', error))
-  }, [])
+  const loading = useSelector((state: RootState) => state.config.loading)
 
   return (
-    <div className="App">
-      <header className="App-header">
-          <div className='container py-20'>
-            <Articles 
-              articles={articles}
-              itemsPerPage={articlesPerPage}
-            />
-            {/* <button onClick={() => dispatch(increment())} >+</button>
-            <span>{count}</span>
-            <button onClick={() => dispatch(decrement())} >-</button> */}
-
+    <LoadingOverlay
+      active={loading}
+      spinner={
+        <Bars 
+          height="40"
+          width="40"
+          color="#2563eb"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      }
+    >
+      <ToastContainer />
+      <div className="App">
+        <header className="App-header">
+          <Navbar />
+          <div className='container py-10 flex h-screen'>
+            <Outlet />
           </div>
-      </header>
-    </div>
+        </header>
+      </div>
+    </LoadingOverlay>
   );
 }
 
