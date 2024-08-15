@@ -157,7 +157,7 @@ export const HomePage = () => {
       </div>
       <Articles 
         articles={articles}
-        emptyString='Search to display result'
+        emptyString={<p className="w-full text-sm">Search to display result</p>}
       />
     </div>
   )

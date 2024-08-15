@@ -29,7 +29,8 @@ const ArticleTile = (props: ArticleTileProps) => {
         </div>
       ) : (
         <div className="justify-content-center w-full items-center h-full">
-          <p className="w-full text-sm">{emptyString}</p>
+          {/* <div dangerouslySetInnerHTML={{__html: emptyString}} /> */}
+          {emptyString}
         </div>
       )}
 

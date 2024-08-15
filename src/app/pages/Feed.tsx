@@ -101,7 +101,7 @@ export const Feed = () => {
     <div className='flex gap-20 flex-col w-full'>
       <Articles 
         articles={articles}
-        emptyString='No Feeds'
+        emptyString={<p className="w-full text-sm">No Feeds. Click <Link to={'/settings'} className='underline text-[#2563eb]'>here</Link> to generate feeds</p>}
       />
     </div>
   )

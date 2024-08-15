@@ -9,12 +9,12 @@ export interface NewsArticles {
 
 export interface ArticleTileProps {
 	articles: Array<NewsArticles>
-	emptyString: string
+	emptyString: any
 }
 
 export interface ArticlesProps {
 	articles: Array<NewsArticles>
-	emptyString: string
+	emptyString: any
 }
 
 export interface Sources {
