@@ -1,12 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import moment from 'moment';
-import { Bars } from 'react-loader-spinner';
-import LoadingOverlay from 'react-loading-overlay';
-import { ToastContainer } from 'react-toastify';
+import { useEffect, useState } from 'react';
 import "react-toastify/dist/ReactToastify.css";
-import { Link, NavLink, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { errorPop } from '../utils';
 import Articles from '../components/Articles';
 import { NewsArticles } from '../utils/interfaces';

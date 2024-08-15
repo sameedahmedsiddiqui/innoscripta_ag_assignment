@@ -1,17 +1,9 @@
-import React, { useState } from 'react';
 import './App.css';
-import { errorPop } from './app/utils';
-import { NewsArticles } from './app/utils/interfaces';
-import Articles from './app/components/Articles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import moment from 'moment';
 import { Bars } from 'react-loader-spinner';
 import LoadingOverlay from 'react-loading-overlay';
-import { getNewsApiArticles, getNYTArticles, getTGArticles } from './app/utils/Api/newsApi';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import { Link, NavLink, Outlet, Route } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from './app/store/store';
 import { Navbar } from './app/components/Navbar';

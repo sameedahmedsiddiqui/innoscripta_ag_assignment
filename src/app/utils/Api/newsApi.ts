@@ -1,7 +1,6 @@
 import axios from "axios"
 import { NEWS_API_KEY, NEWS_API_URL, NYT_API_KEY, NYT_API_URL, NYT_IMG_URL, TG_API_KEY, TG_API_URL } from "../../../constants"
 import { NewsArticles, NewsArticlesProps } from "../interfaces"
-import { Bounce, toast } from "react-toastify"
 import { errorPop } from ".."
 
 const getNewsApiArticles = async (props: NewsArticlesProps) => {
