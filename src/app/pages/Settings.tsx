@@ -54,7 +54,7 @@ export const Settings = () => {
         <div className='flex bg-white rounded'>
             <input type="text" name="searchQuery" id="searchQuery" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className='text-black p-3 w-full rounded text-sm' />
         </div>
-        <div className='flex align-left gap-10'>
+        <div className='flex align-left gap-10 mx-sm:!flex-col mx-sm:!gap-5'>
           <div className='flex flex-col gap-2 w-full'>
             <label htmlFor="fromDate" className='text-sm text-left'>From</label>
             <input type="date" name="fromDate" id="fromDate" className='rounded text-black text-sm p-3 w-full' value={fromDate} max={moment().format("YYYY-MM-DD")} onChange={(e) => setFromDate(e.target.value)} />
@@ -64,7 +64,7 @@ export const Settings = () => {
             <input type="date" name="toDate" id="toDate" className='rounded text-black text-sm p-3 w-full' value={toDate} max={moment().format("YYYY-MM-DD")} onChange={(e) => setToDate(e.target.value)}  />
           </div>
         </div>
-        <div className='flex align-left gap-10'>
+        <div className='flex align-left gap-10 mx-sm:!flex-col mx-sm:!gap-5'>
           <div className='flex flex-col gap-2 w-full'>
             <label htmlFor="category" className='text-sm text-left'>Category</label>
             <input type="text" name="category" id="category" className='rounded text-black text-sm p-3 w-full' value={category} onChange={(e) => setCategory(e.target.value)} />
@@ -74,7 +74,7 @@ export const Settings = () => {
             <input type="text" name="source" id="source" className='rounded text-black text-sm p-3 w-full' value={source} onChange={(e) => setSource(e.target.value)} />
           </div>
         </div>
-        <div className='flex align-left gap-2'>
+        <div className='flex align-left gap-2 mx-sm:!flex-col mx-sm:!gap-5'>
           <button type="button" className='text-sm bg-blue-600 p-3 w-full rounded' onClick={handleFilter} >Save Settings</button>
         </div>
       </div>

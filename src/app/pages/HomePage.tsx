@@ -117,41 +117,41 @@ export const HomePage = () => {
   }
   
   return (
-    <div className='flex gap-20 flex-col'>
-      <div className='grid lg:grid-cols-6 md:grid-cols-3 grid-cols-1 gap-10 place-content-center px-5'>
-        <form onSubmit={(e) => handleSubmit(e)} className=''>
+    <div className='flex gap-20 flex-col w-full'>
+      <div className='grid lg:grid-cols-6 grid-cols-1 gap-10 place-content-center px-5 mx-sm:!gap-5'>
+        <form onSubmit={(e) => handleSubmit(e)} className='mx-lg:w-full'>
           <div className='flex bg-white rounded'>
               <input type="text" name="searchQuery" id="searchQuery" value={searchQuery} onChange={(e) => handleChange(e)} className='text-black px-3 w-full rounded text-sm' />
-              <button type="submit" className='px-3 bg-gray-400 rounded'><FontAwesomeIcon icon={faMagnifyingGlass} size='sm' /></button>
+              <button type="submit" className='px-3 bg-gray-400 rounded mx-sm:!py-3'><FontAwesomeIcon icon={faMagnifyingGlass} size='sm' /></button>
           </div>
         </form>
         <div className='flex align-left gap-2'>
-          <div className='flex gap-2 w-full'>
-            <label htmlFor="fromDate" className='text-base text-left self-center'>From</label>
-            <input type="date" name="fromDate" id="fromDate" className='rounded text-black text-sm px-3 w-full' value={fromDate} max={moment().format("YYYY-MM-DD")} onChange={(e) => setFromDate(e.target.value)} />
+          <div className='flex gap-2 w-full mx-lg:!flex-col'>
+            <label htmlFor="fromDate" className='text-sm text-left self-center mx-lg:!w-full'>From</label>
+            <input type="date" name="fromDate" id="fromDate" className='rounded text-black text-sm px-3 w-full mx-lg:!py-3' value={fromDate} max={moment().format("YYYY-MM-DD")} onChange={(e) => setFromDate(e.target.value)} />
+          </div>
+        </div>
+        <div className='flex align-left gap-2'>
+          <div className='flex gap-2 w-full mx-lg:!flex-col'>
+            <label htmlFor="toDate" className='text-sm text-left self-center mx-lg:!w-full'>To</label>
+            <input type="date" name="toDate" id="toDate" className='rounded text-black text-sm px-3 w-full mx-lg:!py-3' value={toDate} max={moment().format("YYYY-MM-DD")} onChange={(e) => setToDate(e.target.value)}  />
+          </div>
+        </div>
+        <div className='flex align-left gap-2'>
+          <div className='flex gap-2 w-full mx-lg:!flex-col'>
+            <label htmlFor="category" className='text-sm text-left self-center mx-lg:!w-full'>Category</label>
+            <input type="text" name="category" id="category" className='rounded text-black text-sm px-3 w-full mx-lg:!py-3' value={category} onChange={(e) => setCategory(e.target.value)} />
+          </div>
+        </div>
+        <div className='flex align-left gap-2'>
+          <div className='flex gap-2 w-full mx-lg:!flex-col'>
+            <label htmlFor="source" className='text-sm text-left self-center mx-lg:!w-full'>Source</label>
+            <input type="text" name="source" id="source" className='rounded text-black text-sm px-3 w-full mx-lg:!py-3' value={source} onChange={(e) => setSource(e.target.value)} />
           </div>
         </div>
         <div className='flex align-left gap-2'>
           <div className='flex gap-2 w-full'>
-            <label htmlFor="toDate" className='text-sm text-left self-center'>To</label>
-            <input type="date" name="toDate" id="toDate" className='rounded text-black text-sm px-3 w-full' value={toDate} max={moment().format("YYYY-MM-DD")} onChange={(e) => setToDate(e.target.value)}  />
-          </div>
-        </div>
-        <div className='flex align-left gap-2'>
-          <div className='flex gap-2 w-full'>
-            <label htmlFor="category" className='text-sm text-left self-center'>Category</label>
-            <input type="text" name="category" id="category" className='rounded text-black text-sm px-3 w-full' value={category} onChange={(e) => setCategory(e.target.value)} />
-          </div>
-        </div>
-        <div className='flex align-left gap-2'>
-          <div className='flex gap-2 w-full'>
-            <label htmlFor="source" className='text-sm text-left self-center'>Source</label>
-            <input type="text" name="source" id="source" className='rounded text-black text-sm px-3 w-full' value={source} onChange={(e) => setSource(e.target.value)} />
-          </div>
-        </div>
-        <div className='flex align-left gap-2'>
-          <div className='flex gap-2 w-full'>
-            <button type="button" className='text-sm bg-blue-600 px-5 rounded' onClick={handleFilter} >Filter</button>
+            <button type="button" className='text-sm bg-blue-600 px-5 rounded mx-lg:!py-3 mx-lg:!w-full' onClick={handleFilter} >Filter</button>
           </div>
         </div>
       </div>

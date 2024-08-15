@@ -8,10 +8,10 @@ const ArticleTile = (props: ArticleTileProps) => {
   return (
     <>
       {articles.length > 0 ? (
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 md:!p-0 lg:!p-0 px-5 gap-8">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 md:!p-0 lg:!p-0 sm:px-5 gap-8">
           {
             articles.map((x, i) => (
-              <div key={i} className='flex flex-col gap-10 '>
+              <div key={i} className='flex flex-col gap-10 p-3 xs:border sm:border-0 border-[#585858]'>
                 <div>
                   <img className='h-[200px] w-full' src={x.urlToImage} alt={x.title} />
                   <div className='flex flex-col gap-3 pt-5 text-left'>
